@@ -45,3 +45,12 @@
         <img src="assets/additional_layout.png" width="50%">
 
     5. Check **Right Alt as Hangul, right Ctrl as Hanja**
+
+### System time
+
+* Fix Time Differences in Ubuntu & Windows Dual Boot
+
+    ```bash
+    # use rtc time in the local time zone
+    timedatectl set-local-rtc 1 --adjust-system-clock
+    ```
