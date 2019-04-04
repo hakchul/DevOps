@@ -4,7 +4,7 @@
 
 ### CQLSH
 
-* connect
+* Connection
 
     ```bash
     # cqlsh [ip] [options]
@@ -37,7 +37,14 @@
 
 * Restoring from a snapshot
 
+    > Make sure the table schema exists. If necessary, truncate the table.
+
     ```bash
+    # Locate the most recent snapshot folder:
+    #   data_directory/keyspace/table_name-UUID/snapshots/snapshot_name
+    # Copy the most recent snapshot SSTable directory to the data directory:
+    #   data_directory/keyspace/table_name-UUID
+
     # run refresh command for each table
     nodetool refresh keyspace table
     ```
