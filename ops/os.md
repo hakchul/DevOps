@@ -22,4 +22,4 @@
         
         > If it is does not appear, restart ubuntu
 
-        <img src="assets/input_sources_hangul.png" width="50%">
+        <img src="assets/input_sources_hangul.png" width="80%">
