@@ -4,7 +4,7 @@
 
 ### Hangul
 
-* 한글설정
+* Add Korean
 
     1. Open **Settings > Region & Language**
 
@@ -16,10 +16,32 @@
 
     3. Click **Install / Remove Languages...**
 
+    4. Check **Korean**
+    
         <img src="assets/installed_languages.png" width="50%">
 
-    4. Add **Korean (Hangul)** to input source 
+    5. Apply
+
+    6. Add **Korean (Hangul)** to **Input Sources**
         
         > If it is does not appear, restart ubuntu
 
         <img src="assets/input_sources_hangul.png" width="80%">
+
+* Korean Hangul/Hanja keys
+
+    1. Open **Ubuntu Software**
+    
+    2. Install **GNOME Tweaks**
+
+        <img src="assets/install_tweaks.png" width="80%">
+
+    3. Open **GNOME Tweaks > Keyboard & Mouse**
+
+        <img src="assets/tweaks.png" width="80%">
+
+    4. Click "Additional Layout Options"
+
+        <img src="assets/additional_layout.png" width="50%">
+
+    5. Check **Right Alt as Hangul, right Ctrl as Hanja**
