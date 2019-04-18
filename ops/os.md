@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD033 -->
+
 # OS
 
 ## Ubuntu 18.04
