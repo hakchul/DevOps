@@ -13,6 +13,14 @@
     timedatectl set-local-rtc 1 --adjust-system-clock
     ```
 
+### File systems
+
+* exFAT
+
+    ```bash
+    sudo apt-get install exfat-fuse exfat-utils
+    ```
+
 ### Lock and black screen
 
 * Set timeout of "Blank Screen"
