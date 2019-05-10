@@ -28,3 +28,11 @@
     # python3
     source py3/bin/activate
     ```
+
+* Alias (Optional)
+
+    ```bash
+    # add aliases in ~/.bashrc file
+    alias venv_py2='source ~/venv/py2/bin/activate'
+    alias venv_py3='source ~/venv/py3/bin/activate'
+    ```
