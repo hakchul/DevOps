@@ -14,10 +14,11 @@
 * Create a new virtual environment
 
     ```bash
+    mkdir ~/venv
     # python2
-    virtualenv --system-site-packages -p python2.7 ./py2
+    virtualenv --system-site-packages -p python2.7 ~/venv/py2
     # python3
-    virtualenv --system-site-packages -p python3 ./py3
+    virtualenv --system-site-packages -p python3 ~/venv/py3
     ```
 
 * Activate the virtual environment
