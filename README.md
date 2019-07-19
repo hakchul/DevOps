@@ -9,10 +9,8 @@
 
 * [OS](ops/os.md)
   * [Ubuntu 18.04](ops/os.md#ubuntu-1804)
-    * [System time](ops/os.md#system-time)
-    * [File systems](ops/os.md#file-systems)
-    * [Lock and black screen](ops/os.md#lock-and-black-screen)
-    * [Hangul](ops/os.md#Hangul)
+* [Linux](ops/linux.md)
+  * [Commands](ops/linux.md#commands)
 * [DB](ops/db.md)
   * [Cassandra](ops/db.md#cassandra)
 * [Docker](ops/docker.md)

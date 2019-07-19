@@ -1,5 +1,14 @@
 # Docker
 
+## Ubuntu
+
+* Installation
+    
+    ```bash
+    sudo apt install docker.io
+    sudo usermod -aG docker $USER   # add user to docker group
+    ```
+
 ## Windows
 
 * Connect SSH into the Docker VM (MobyLinuxVM) on Windows
