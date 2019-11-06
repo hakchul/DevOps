@@ -2,7 +2,7 @@
 
 # OS
 
-    > Instllations and Settings
+> Instllations and Settings
 
 ## Ubuntu 18.04
 
@@ -24,7 +24,7 @@
 
 * Settings (/etc/ssh/sshd_config)
 
-    ```
+    ```config
     PermitRootLogin no
     PasswordAuthentication no
     ```
@@ -52,12 +52,13 @@
     write_enable=YES
     utf8_filesystem=YES
     ```
+
     ```bash
     # restart
     sudo service vsftpd restart
     ```
 
-### Etc.
+### Etc
 
 * bash-completion
 
@@ -120,15 +121,14 @@
 * Install Languages (terminal)
 
     ```bash
-    sudo apt install language-pack-en language-pack-en-base 
+    sudo apt install language-pack-en language-pack-en-base
     sudo apt install language-pack-ko language-pack-ko-base
     sudo update-locale LANG=en_US.utf8 # reboot required
     ```
 
-    * Keyboard > layout > Korean (101/104 key compatible)
-    * Language Support > keyboard input method system > iBus
-    * iBus Preferences > Input Method > Add > Korean - Hangul # re-login required
-
+  * Keyboard > layout > Korean (101/104 key compatible)
+  * Language Support > keyboard input method system > iBus
+  * iBus Preferences > Input Method > Add > Korean - Hangul # re-login required
 
 * Install Languages (GUI)
 
@@ -171,5 +171,3 @@
         <img src="assets/additional_layout.png" width="50%">
 
     5. Check **Right Alt as Hangul, right Ctrl as Hanja**
-
-

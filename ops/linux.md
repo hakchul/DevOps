@@ -1,6 +1,6 @@
 # LINUX
 
-    > Commands
+> Commands
 
 ## Commands
 
@@ -8,19 +8,25 @@
 
 * Mount volume on boot
 
-    * Check uuid
+  * Check uuid
 
-        ```bash
-        sudo blkid
-        ```
+    ```bash
+    sudo blkid
+    ```
 
-    * Edit /etc/fstab
+  * Edit /etc/fstab
 
-        ```
-        UUID={UUID} {/PATH/TO/MOUNT} {TYPE} defaults,nofail 0 0
-        ```
+    ```config
+    UUID={UUID} {/PATH/TO/MOUNT} {TYPE} defaults,nofail 0 0
+    ```
 
 ### SSH
+
+* Turn off checking known_host
+
+    ```bash
+    ssh -o StrictHostKeyChecking=no ...
+    ```
 
 * Reverse SSH
 
@@ -32,4 +38,3 @@
     ssh {host_user}@localhost -p {bind_port}
     ssh hc@localhost -p 9999
     ```
-
