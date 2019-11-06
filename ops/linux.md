@@ -25,7 +25,7 @@
 * Turn off checking known_host
 
     ```bash
-    ssh -o StrictHostKeyChecking=no ...
+    ssh -o StrictHostKeyChecking=no {user}@{host}
     ```
 
 * Reverse SSH
