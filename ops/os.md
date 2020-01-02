@@ -103,6 +103,26 @@
     sudo service vsftpd restart
     ```
 
+### Swapfile
+
+* Change swap size
+
+    ```bash
+    # disable the swap file and delete it
+    sudo swapoff /swapfile
+    sudo rm  /swapfile
+    # create new swap file
+    sudo dd if=/dev/zero of=/swapfile bs=1M count=8192
+    # set the swap file permissions to 600
+    sudo chmod 600 /swapfile
+    # format the file as swap
+    sudo mkswap /swapfile
+    # enable use of swap file
+    sudo swapon /swapfile
+    ```
+
+    > https://askubuntu.com/a/1075516
+
 ### File Systems
 
 * exFAT
