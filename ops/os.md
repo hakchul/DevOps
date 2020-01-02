@@ -6,18 +6,33 @@
 
 ## Ubuntu 18.04
 
-### Users (root)
+### User Management
 
-* Add and Delete
+> https://help.ubuntu.com/lts/serverguide/user-management.html
+
+* Adding and Deleting Users
 
     ```bash
-    # Add a user
-    adduser {user}
-    usermod -aG sudo {user}
+    # adding a user
+    sudo adduser {user}
+    # temporarily lock or unlock a user account
+    sudo passwd -l {user}
+    sudo passwd -u {user}
     # delete a user
-    deluser odroid
+    deluser {user}
+    # add a user to a group
+    sudo adduser {user} {group}
     # change password
     passwd
+    ```
+
+* Enable/Disable the root account password
+
+    ```bash
+    # enable
+    sudo passwd
+    # disable
+    sudo passwd -l root
     ```
 
 ### SSH Server
@@ -126,6 +141,17 @@
     sudo apt update
     sudo apt upgrade
     ```
+
+### Security
+
+* Disable Ctrl+Alt+Delete
+
+    ```bash
+    sudo systemctl mask ctrl-alt-del.target
+    sudo systemctl daemon-reload
+    ```
+
+    > https://help.ubuntu.com/lts/serverguide/console-security.html
 
 ### System Time
 
