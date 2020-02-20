@@ -4,6 +4,8 @@
 
 * [Python](dev/python.md)
   * [Virtualenv](dev/python.md#virtualenv)
+* [Tools](dev/tools.md)
+  * [Windows Terminal](dev/tools.md#windows-terminal)
 
 ## Ops
 
