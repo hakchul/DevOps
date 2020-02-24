@@ -19,11 +19,11 @@
     sudo passwd -l {user}
     sudo passwd -u {user}
     # delete a user
-    deluser {user}
+    sudo deluser {user}
     # add a user to a group
     sudo adduser {user} {group}
     # change password
-    passwd
+    sudo passwd
     ```
 
 * Enable/Disable the root account password
