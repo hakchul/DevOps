@@ -263,3 +263,12 @@
         <img src="assets/additional_layout.png" width="50%">
 
     5. Check **Right Alt as Hangul, right Ctrl as Hanja**
+
+### Troubleshooting
+
+* Mouse wheel jumping
+
+    ```bash
+    sudo apt install imwheel
+    imwheel --kill --buttons "4 5"
+    ```
