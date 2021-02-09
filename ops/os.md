@@ -4,7 +4,7 @@
 
 > Instllations and Settings
 
-## Ubuntu 18.04
+## Ubuntu
 
 ### User Management
 
@@ -15,13 +15,14 @@
     ```bash
     # adding a user
     sudo adduser {user}
-    # temporarily lock or unlock a user account
+    # add a user to a group
+    sudo adduser {user} {group}
+    # temporarily lock a user account
     sudo passwd -l {user}
+    # unlock a user account
     sudo passwd -u {user}
     # delete a user
     sudo deluser {user}
-    # add a user to a group
-    sudo adduser {user} {group}
     # change password
     sudo passwd
     ```
@@ -43,15 +44,16 @@
     apt-get install openssh-server
     ```
 
-* Settings (/etc/ssh/sshd_config)
+* Setting Example (/etc/ssh/sshd_config)
 
     ```conf
     PermitRootLogin no
     PasswordAuthentication no
     ```
 
+* Restart service
+
     ```bash
-    # restart service
     sudo service ssh restart
     ```
 
@@ -60,14 +62,45 @@
 * Using public key
 
     ```bash
-    ssh-keygen    # generate public/private key
-    ssh-copy-id {user}@{server.ip} -p {port} # copy public key  to server
+    # generate public/private key
+    ssh-keygen
+    # copy public key to server
+    ssh-copy-id {user}@{server.ip} -p {port}
     ```
 
 * Turn off checking known_host
 
     ```bash
     ssh -o StrictHostKeyChecking=no {user}@{host}
+    ```
+
+### Samba Server
+
+* Using public key
+
+    ```bash
+    sudo apt-get install samba
+    ```
+
+* add below on /etc/samba/smb.conf
+
+    ```conf
+    [shared]
+        comment = Samba
+        path = {/path/to/share}
+        force user = {user}
+        read only = no
+        writable = yes
+        browsable = yes
+        guest ok = yes
+        create mask = 0664
+        directory mask = 0775
+    ```
+
+* restart service
+
+    ```bash
+    sudo service smbd restart
     ```
 
 ### Reverse SSH
@@ -182,87 +215,59 @@
     timedatectl set-local-rtc 1 --adjust-system-clock
     ```
 
-### Lock and black screen
+### Power Management
 
-* Set timeout of "Blank Screen"
-
-    **GUI:**
-
-    Settings → Power → Power Saving → Blank screen
-
-    **Terminal:**
+* Sleep Status
 
     ```bash
-    gsettings set org.gnome.desktop.session idle-delay 3600 # an hour
+    systemctl status sleep.target suspend.target hibernate.target hybrid-sleep.target
     ```
 
-* Set timeout of "Lock screen after blank"
-
-    **GUI:**
-
-    Settings → Privacy → Screen Lock → Lock screen after blank for
-
-    **Terminal:**
+* Disable Sleep
 
     ```bash
-    gsettings set org.gnome.desktop.screensaver lock-delay 60 # a minute
+    sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+    ```
+
+* Enable Sleep
+
+    ```bash
+    sudo systemctl unmask sleep.target suspend.target hibernate.target hybrid-sleep.target
+    ```
+
+### Partitioning
+
+* Parted
+
+
+    ```bash
+    # list block device
+    lsblk
+    # run parted
+    sudo parted
+    # (parted) select device
+    select /dev/sda
+    # (parted) display selected
+    print
+    # (parted) make label
+    mklabel msdos
+    # (parted) make partition
+    mkpart primary 1MB 100%
+    # (parted) quit
+    quit
+    # format partition
+    sudo mkfs.ext4 /dev/sda1
     ```
 
 ### Language
 
-* Install Languages (terminal)
+* Install Languages
 
     ```bash
     sudo apt install language-pack-en language-pack-en-base
     sudo apt install language-pack-ko language-pack-ko-base
     sudo update-locale LANG=en_US.utf8 # reboot required
     ```
-
-  * Keyboard > layout > Korean (101/104 key compatible)
-  * Language Support > keyboard input method system > iBus
-  * iBus Preferences > Input Method > Add > Korean - Hangul # re-login required
-
-* Install Languages (GUI)
-
-    1. Open **Settings > Region & Language**
-
-        <img src="assets/region_language.png" width="80%">
-
-    2. Click **Manage Installed languages**
-
-        <img src="assets/language_support.png" width="50%">
-
-    3. Click **Install / Remove Languages...**
-
-    4. Check **Korean**
-
-        <img src="assets/installed_languages.png" width="50%">
-
-    5. Apply
-
-    6. Add **Korean (Hangul)** to **Input Sources**
-
-        > If it is does not appear, restart ubuntu
-
-        <img src="assets/input_sources_hangul.png" width="80%">
-
-* Korean Hangul/Hanja keys
-
-    1. Open **Ubuntu Software**
-
-    2. Install **GNOME Tweaks**
-
-        <img src="assets/install_tweaks.png" width="80%">
-
-    3. Open **GNOME Tweaks > Keyboard & Mouse**
-
-        <img src="assets/tweaks.png" width="80%">
-
-    4. Click "Additional Layout Options"
-
-        <img src="assets/additional_layout.png" width="50%">
-
-    5. Check **Right Alt as Hangul, right Ctrl as Hanja**
 
 ### Troubleshooting
 

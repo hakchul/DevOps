@@ -10,7 +10,7 @@
 ## Ops
 
 * [OS](ops/os.md)
-  * [Ubuntu 18.04](ops/os.md#ubuntu-1804)
+  * [Ubuntu](ops/os.md#ubuntu)
 * [DB](ops/db.md)
   * [Cassandra](ops/db.md#cassandra)
 * [Docker](ops/docker.md)
