@@ -82,7 +82,7 @@
     sudo apt-get install samba
     ```
 
-* add below on /etc/samba/smb.conf
+* Add below on /etc/samba/smb.conf
 
     ```conf
     [shared]
@@ -97,7 +97,7 @@
         directory mask = 0775
     ```
 
-* restart service
+* Restart service
 
     ```bash
     sudo service smbd restart
@@ -180,21 +180,6 @@
     UUID={UUID} {/PATH/TO/MOUNT} {TYPE} defaults,nofail 0 0
     ```
 
-### Etc
-
-* bash-completion
-
-    ```bash
-    sudo apt install bash-completion
-    ```
-
-* upgrade
-
-    ```bash
-    sudo apt update
-    sudo apt upgrade
-    ```
-
 ### Security
 
 * Disable Ctrl+Alt+Delete
@@ -239,7 +224,6 @@
 
 * Parted
 
-
     ```bash
     # list block device
     lsblk
@@ -267,6 +251,16 @@
     sudo apt install language-pack-en language-pack-en-base
     sudo apt install language-pack-ko language-pack-ko-base
     sudo update-locale LANG=en_US.utf8 # reboot required
+    ```
+
+### Compression
+
+* Split tar
+    ```bash
+    # create and break archive file into small blocks each of size 1GB
+    tar cvf - {PATH_FILE} | split -b 1G - "filename.tar.part"
+    # extract split files
+    cat filename.tar.part* | tar xvf -
     ```
 
 ### Troubleshooting
