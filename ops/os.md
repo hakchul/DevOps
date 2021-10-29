@@ -106,7 +106,7 @@
 
 ### DLNA Server
 
-* Using public key
+* Install DLNA server
 
     ```bash
     sudo apt-get install minidlna
