@@ -76,7 +76,7 @@
 
 ### Samba Server
 
-* Using public key
+* Install samba server
 
     ```bash
     sudo apt-get install samba
@@ -101,6 +101,31 @@
 
     ```bash
     sudo service smbd restart
+    ```
+
+
+### DLNA Server
+
+* Using public key
+
+    ```bash
+    sudo apt-get install minidlna
+    ```
+
+* Add below on /etc/minidlna.conf
+
+    ```conf
+    media_dir=A,/home/{user}/Music
+    media_dir=P,/home/{user}/Pictures
+    media_dir=V,/home/{user}/Videos
+    db_dir=/var/cache/minidlna          # Needs to be un-commented
+    log_dir=/var/log                    # Needs to be un-commented
+    ```
+
+* Restart service
+
+    ```bash
+    sudo service minidlna restart
     ```
 
 ### Reverse SSH
