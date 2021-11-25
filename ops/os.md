@@ -74,6 +74,27 @@
     ssh -o StrictHostKeyChecking=no {user}@{host}
     ```
 
+### Firewall
+
+> https://help.ubuntu.com/community/UFW
+
+* UFW - Uncomplicated Firewall
+
+    ```bash
+    # allow specific ip address with subnet
+    sudo ufw allow from 192.168.0.0/16
+    # limit ssh
+    sudo ufw limit ssh
+    # enable ufw
+    sudo ufw enable
+    # status
+    sudo ufw status
+    sudo ufw status numbered
+    # delete
+    # sudo ufw delete limit ssh
+    # sudo ufw delete 1
+    ```
+
 ### Samba Server
 
 * Install samba server
@@ -135,10 +156,10 @@
     ```bash
     # on host server
     ssh -T -R {bind_port}:localhost:{host_port} {user}@{relay.server.ip} -p {port}
-    ssh -T -R 9999:localhost:22 hc@100.100.100.100 -p 2222
+    ssh -T -R 9999:localhost:22 {user}@100.100.100.100 -p 2222
     # on relay server
     ssh {host_user}@localhost -p {bind_port}
-    ssh hc@localhost -p 9999
+    ssh {user}@localhost -p 9999
     ```
 
 ### FTP Server
