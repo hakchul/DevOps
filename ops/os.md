@@ -41,7 +41,7 @@
 * Install
 
     ```bash
-    apt-get install openssh-server
+    sudo apt-get install openssh-server
     ```
 
 * Setting Example (/etc/ssh/sshd_config)
@@ -189,11 +189,8 @@
     ```bash
     # disable the swap file and delete it
     sudo swapoff /swapfile
-    sudo rm  /swapfile
     # create new swap file
-    sudo dd if=/dev/zero of=/swapfile bs=1M count=8192
-    # set the swap file permissions to 600
-    sudo chmod 600 /swapfile
+    sudo dd if=/dev/zero of=/swapfile bs=1G count=16
     # format the file as swap
     sudo mkswap /swapfile
     # enable use of swap file
@@ -208,6 +205,15 @@
 
     ```bash
     sudo apt-get install exfat-fuse exfat-utils
+    ```
+
+### Ubuntu tracker
+
+* Modify ignored-directires
+
+    ```bash
+    gsettings set org.freedesktop.Tracker.Miner.Files ignored-directories "['po', 'CVS', 'core-dumps', 'lost+found', 'data', 'venv']"
+    tracker reset -r
     ```
 
 ### Mount Drivers
