@@ -131,6 +131,8 @@
 
     ```bash
     sudo apt-get install minidlna
+    # add user to minidlna group
+    sudo adduser minidlna $USER
     ```
 
 * Add below on /etc/minidlna.conf
