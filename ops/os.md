@@ -44,11 +44,13 @@
     sudo apt-get install openssh-server
     ```
 
-* Setting Example (/etc/ssh/sshd_config)
+* Add setting (/etc/ssh/sshd_config.d/sshd_config_cloud.conf)
 
     ```conf
     PermitRootLogin no
+    ChallengeResponseAuthentication no
     PasswordAuthentication no
+    UsePAM no
     ```
 
 * Restart service
