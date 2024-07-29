@@ -306,7 +306,8 @@
     ```bash
     sudo apt install language-pack-en language-pack-en-base
     sudo apt install language-pack-ko language-pack-ko-base
-    sudo update-locale LANG=en_US.utf8 # reboot required
+    sudo update-locale LANG=en_US.utf8
+    # reboot required
     ```
 
 ### Compression
@@ -317,6 +318,47 @@
     tar cvf - {PATH_FILE} | split -b 1G - "filename.tar.part"
     # extract split files
     cat filename.tar.part* | tar xvf -
+    ```
+
+### CRONTAB
+
+* run crontab editor
+
+    ```bash
+    crontab -e
+    ```
+
+* add command on crontab (every day mid-night)
+
+    ```
+    0 0 * * * {command}
+    ```
+
+### Install Minimal GUI
+
+* Install gnome
+
+    ```bash
+    sudo apt install gnome-session gnome-terminal 
+    ```
+
+### CPU Frequency
+
+* Install packages
+    ```bash
+    sudo apt install linux-tools-common
+    # install extra package linux-tools-{kernel_version}-{target}
+    ```
+
+* Set frequency
+    ```bash
+    sudo cpupower frequency-set -f 1400MHz
+    ```
+
+* Monitor cpu clock
+    ```bash
+    watch -n1 cpupower -c all frequency-info -f
+    watch -n1 cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_cur_freq
     ```
 
 ### Troubleshooting
