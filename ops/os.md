@@ -384,6 +384,6 @@
 * run imwheel
 
     ```bash
-    imwheel
+    imwheel --kill --buttons "4 5"
     # or add command to startup application
     ```
