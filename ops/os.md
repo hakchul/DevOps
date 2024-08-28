@@ -44,7 +44,7 @@
     sudo apt-get install openssh-server
     ```
 
-* Add setting (/etc/ssh/sshd_config.d/sshd_config_cloud.conf)
+* Add setting (/etc/ssh/sshd_config.d/sshd_config_custom.conf)
 
     ```conf
     PermitRootLogin no
@@ -363,9 +363,27 @@
 
 ### Troubleshooting
 
-* Mouse wheel jumping
 
+#### Mouse wheel jumping
+
+* install package
     ```bash
     sudo apt install imwheel
-    imwheel --kill --buttons "4 5"
+    ```
+
+* create "~/.imwheelrc" file with below contents
+
+    ```text
+    ".*"
+    Control_L, Up,   Control_L|Button4
+    Control_L, Down, Control_L|Button5
+    Control_R, Up,   Control_R|Button4
+    Control_R, Down, Control_R|Button5
+    ```
+
+* run imwheel
+
+    ```bash
+    imwheel
+    # or add command to startup application
     ```
