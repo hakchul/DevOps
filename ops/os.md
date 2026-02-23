@@ -387,3 +387,36 @@
     imwheel --kill --buttons "4 5"
     # or add command to startup application
     ```
+
+## Windows
+
+### SSH Server
+
+* Install
+
+    ```powershell
+    # Open PowerShell as an administrator
+    # Install the OpenSSH Server
+    Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
+    ```
+
+* Start and Settings
+
+    ```powershell
+    # Open PowerShell as an administrator
+    # Start the sshd service
+    Start-Service sshd
+    # OPTIONAL but recommended:
+    Set-Service -Name sshd -StartupType 'Automatic'
+    # Add a firewall rule.
+    New-NetFirewallRule -Name 'OpenSSH-Server-In-TCP' -DisplayName 'OpenSSH Server(sshd) for 192.168.0.0/16' -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22 -RemoteAddress "192.168.0.0/16"
+    ```
+
+* Restart service
+
+    ```powershell
+    # Open PowerShell as an administrator
+    # Restart service
+    Restart-Service sshd
+    ```
+
